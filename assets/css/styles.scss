@@ -400,17 +400,18 @@ header {
 	display: flex;
 	flex-direction: column;
 	gap: 30px;
-	padding: 40px 0;
+	padding: 40px 80px;
 }
 
 .content__item {
-	font-size: 18px;
-	line-height: 1.4;
+	font-weight: 400;
+
 	h1,
 	h2,
 	h3,
 	h4 {
 		font-weight: 600;
+		line-height: 1.1;
 	}
 	h1 {
 		font-size: 40px;
@@ -430,7 +431,8 @@ header {
 	}
 	p,
 	.content__table,
-	ul {
+	ul,
+	ol {
 		margin-bottom: 20px;
 	}
 	ol,
@@ -490,9 +492,8 @@ header {
 	th,
 	td {
 		padding: 12px;
-		border: 1px solid rgb(255, 255, 255);
+		border: 1px solid #eaeaea;
 		text-align: left;
-		font-weight: 500;
 	}
 }
 
@@ -635,6 +636,17 @@ footer {
 }
 
 @media (max-width: 1024px) {
+	.content {
+		padding: 40px 0px;
+	}
+	.content__item ol,
+	.content__item ul {
+		padding-left: 30px;
+	}
+	.content__table th,
+	.content__table td {
+		padding: 8px;
+	}
 	.banner {
 		aspect-ratio: 760 / 430;
 	}
@@ -818,6 +830,14 @@ footer {
 	}
 	header {
 		height: 60px;
+	}
+	.content__table {
+		overflow-x: auto;
+		width: calc(100% + 4px);
+		padding-right: 4px;
+		&::-webkit-scrollbar {
+			display: none;
+		}
 	}
 }
 
